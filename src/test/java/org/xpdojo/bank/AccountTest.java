@@ -71,4 +71,11 @@ public class AccountTest {
         assertThat(accountsaving.getBalance()).isEqualTo(1100);
         assertThat(accountcurrent.getBalance()).isEqualTo(900);
     }
+
+    @Test
+    public void PrintAccountBalance(){
+        Account account=new Account(100);
+        account.deposit(10);
+        account.printBalance();
+    }
 }

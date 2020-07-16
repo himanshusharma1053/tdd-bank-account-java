@@ -24,4 +24,8 @@ public class Account {
         accountsaving.deposit(i);
         accountcurrent.withdraw(i);
     }
+
+    public void printBalance() {
+        System.out.println("Account Balance is "+balance);
+    }
 }
