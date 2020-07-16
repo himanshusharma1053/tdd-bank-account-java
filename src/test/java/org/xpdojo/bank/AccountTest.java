@@ -45,4 +45,14 @@ public class AccountTest {
         assertThat(withdrawnMoney).isEqualTo(2);
     }
 
+    @Test
+    public void MovingFromAccountToAnother() {
+        Account accountsaving = new Account(1000);
+        Account accountcurrent = new Account(1000);
+        int withdrawnMoney = accountsaving.withdraw(100);
+        accountcurrent.deposit(100);
+        assertThat(accountsaving.getBalance()).isEqualTo(900);
+        assertThat(accountcurrent.getBalance()).isEqualTo(1100);
+    }
+
 }
