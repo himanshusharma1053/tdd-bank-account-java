@@ -23,4 +23,11 @@ public class AccountTest {
         Account account = new Account(10);
         assertThat(account.getBalance()).isEqualTo(10);
     }
+
+    @Test
+    public void depositingMoneyIntoAccountIncreasesBalance() {
+        Account account = new Account(10);
+        account.deposit(10);
+        assertThat(account.getBalance()).isEqualTo(20);
+    }
 }
