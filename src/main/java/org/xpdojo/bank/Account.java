@@ -1,5 +1,8 @@
 package org.xpdojo.bank;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 public class Account {
 
     private int balance;
@@ -26,6 +29,8 @@ public class Account {
     }
 
     public void printBalance() {
-        System.out.println("Account Balance is "+balance);
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+        System.out.println("Account Balance on "+dtf.format(now)+" is "+balance);
     }
 }
