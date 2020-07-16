@@ -38,4 +38,11 @@ public class AccountTest {
         assertThat(account.getBalance()).isEqualTo(8);
     }
 
+    @Test
+    public void withdrawMoneyFromAccountReducesBalance() {
+        Account account = new Account(10);
+        int withdrawnMoney = account.withdraw(2);
+        assertThat(withdrawnMoney).isEqualTo(2);
+    }
+
 }
