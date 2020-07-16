@@ -55,4 +55,12 @@ public class AccountTest {
         assertThat(accountcurrent.getBalance()).isEqualTo(1100);
     }
 
+    @Test
+    public void TransferFromAccountToAnotherDeposit() {
+        Account accountsaving = new Account(1000);
+        Account accountcurrent = new Account(1000);
+        accountcurrent.transfer(accountsaving,100);
+        assertThat(accountsaving.getBalance()).isEqualTo(1100);
+    }
+
 }
