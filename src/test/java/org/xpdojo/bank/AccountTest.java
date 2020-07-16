@@ -59,8 +59,16 @@ public class AccountTest {
     public void TransferFromAccountToAnotherDeposit() {
         Account accountsaving = new Account(1000);
         Account accountcurrent = new Account(1000);
-        accountcurrent.transfer(accountsaving,100);
+        accountcurrent.transfer(accountsaving,accountcurrent,100);
         assertThat(accountsaving.getBalance()).isEqualTo(1100);
     }
 
+    @Test
+    public void TransferFromAccountToAnotherWithdrwal() {
+        Account accountsaving = new Account(1000);
+        Account accountcurrent = new Account(1000);
+        accountcurrent.transfer(accountsaving,accountcurrent,100);
+        assertThat(accountsaving.getBalance()).isEqualTo(1100);
+        assertThat(accountcurrent.getBalance()).isEqualTo(900);
+    }
 }

@@ -20,7 +20,8 @@ public class Account {
         return amount;
     }
 
-    public void transfer(Account accountsaving, int i) {
+    public void transfer(Account accountsaving,Account accountcurrent, int i) {
         accountsaving.deposit(i);
+        accountcurrent.withdraw(i);
     }
 }
